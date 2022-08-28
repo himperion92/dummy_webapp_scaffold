@@ -20,7 +20,7 @@ services:
       dockerfile: ./docker/robot_dockerfile
     image: myserver-tests:latest
     volumes:
-      - /output:/robot_tests/output
+      - ./output/:/robot_tests/output/*
     depends_on:
       - my_server
     environment:
