@@ -1,0 +1,7 @@
+FROM python:3.10
+
+WORKDIR /robot_tests
+COPY /docker/robot_requirements.txt /robot_tests/requirements.txt
+RUN pip install -r requirements.txt
+COPY /tests/ .
+CMD ["python", "-m", "robot", "."]

@@ -1,0 +1,2 @@
+requests ~= 2.28
+robotframework ~= 5.0

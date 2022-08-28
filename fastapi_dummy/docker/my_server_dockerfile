@@ -1,0 +1,7 @@
+FROM python:3.10
+
+WORKDIR /webapp
+COPY /docker/my_server_requirements.txt /webapp/requirements.txt
+RUN pip install -r requirements.txt
+COPY my_server.py /webapp/my_server.py
+CMD ["python", "-m", "uvicorn", "my_server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
